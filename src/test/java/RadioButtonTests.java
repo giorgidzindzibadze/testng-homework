@@ -17,12 +17,12 @@ public class RadioButtonTests extends ConfigTests {
         // Start with a new WebDriver instance
         reportsFolder = "src/main/resources/RadioButtonFailedTests";//change N2
         WebDriverManager.chromedriver().setup();
-        baseUrl = "https://demoqa.com/";
+//        baseUrl = "https://demoqa.com/";
     }
-
-    @Test
+    @Test(priority = 1,retryAnalyzer = CustomRetryAnalyzer.class,groups = {"FrontEnd"})
     public void testSelectYesOption(){
-        open("radio-button");
+//        open("https://demoqa.com/radio-button");
+        open("https://demoqa.com/radio-button");
 
         SelenideElement yes = $("label[for='yesRadio']");
         yes.click();
@@ -32,11 +32,10 @@ public class RadioButtonTests extends ConfigTests {
         softAssert.fail("This test should fail.");
         softAssert.assertAll();
     }
-
-    @Test
+    @Test(priority = 2,groups = {"BackEnd"}, retryAnalyzer = CustomRetryAnalyzer.class)
     public void testNoOptionAvailability() {
-        open("radio-button");
-
+//        open("radio-button");
+        open("https://demoqa.com/radio-button");
         SelenideElement no = $(By.id("noRadio"));
         SoftAssert softAssert = new SoftAssert();
 
@@ -44,7 +43,7 @@ public class RadioButtonTests extends ConfigTests {
 
 
         softAssert.fail("This test should fail.");
-        softAssert.assertAll();
+//        softAssert.assertAll();
     }
     @AfterMethod
     public void AfterMethod(){

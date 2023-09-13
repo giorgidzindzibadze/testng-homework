@@ -20,19 +20,12 @@ public class ConfigTests {
     @BeforeTest
     public void SelenideTests() {
         screenshots = true; //change2
-        baseUrl = "http://the-internet.herokuapp.com"
+//        baseUrl = "http://the-internet.herokuapp.com";
         reopenBrowserOnFail = true;
         downloadsFolder = "src/main/resources/Pictures";
         fastSetValue = true;
         assertionMode = AssertionMode.SOFT;
         fileDownload = FileDownloadMode.HTTPGET;
         downloadsFolder = "src/main/resources/images";}
-    @AfterTest
-    public void afterTest() {
 
-    }
-    @AfterSuite
-    public void afterSuite(){
-
-    }
 }

@@ -2,23 +2,46 @@
 
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="TestSuite" thread-count="2" parallel="tests" >
+<suite name="TestSuite" thread-count="6" parallel="classes">
+    <test name="groupingtest">
+        <groups>
+            <run>
+                <include name=".*End" />
+            </run>
+        </groups>
 
-    <test name="ChromeTest">
-        <parameter name="browser" value="Chrome" />
-        <classes>   <class name="CheckboxTests">
-        </class>
-            <class name="RadioButtonTests"></class>
-        </classes>
-    </test>
-
-    <test name="EdgeTest">
-        <parameter name="browser" value="Edge" />
         <classes>
             <class name="CheckboxTests">
+                <methods>
+                    <include name="testUncheckCheckbox" /> <!-- Add the test method to include retry logic -->
+                </methods>
             </class>
-            <class name="RadioButtonTests"></class>
+            <class name="RadioButtonTests">
+                <methods>
+                    <include name="testSelectYesOption" /> <!-- Add the test method to include retry logic -->
+                </methods>
+            </class>
         </classes>
     </test>
 
+    <test name="newGroupTest">
+        <groups>
+            <run>
+                <include name="newGroup" />
+            </run>
+        </groups>
+
+        <classes>
+            <class name="CheckboxTests">
+                <methods>
+                    <include name="testUncheckCheckbox" /> <!-- Add the test method to include retry logic -->
+                </methods>
+            </class>
+            <class name="RadioButtonTests">
+                <methods>
+                    <include name="testSelectYesOption" /> <!-- Add the test method to include retry logic -->
+                </methods>
+            </class>
+        </classes>
+    </test>
 </suite>
