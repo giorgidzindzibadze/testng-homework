@@ -3,45 +3,73 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="TestSuite" thread-count="6" parallel="classes">
-    <test name="groupingtest">
-        <groups>
-            <run>
-                <include name=".*End" />
-            </run>
-        </groups>
 
+    <test name="testParametrization">
+        <parameter name="firstName" value="giorgi"/>
+        <parameter name="lastName" value="dzindzibadze"/>
+        <parameter name="gender" value="label[for='gender-radio-1']"/>
+        <parameter name="mobileNumber" value="5991055551"/>
         <classes>
-            <class name="CheckboxTests">
-                <methods>
-                    <include name="testUncheckCheckbox" /> <!-- Add the test method to include retry logic -->
-                </methods>
-            </class>
-            <class name="RadioButtonTests">
-                <methods>
-                    <include name="testSelectYesOption" /> <!-- Add the test method to include retry logic -->
-                </methods>
-            </class>
+            <class name="Parametrization"/>
         </classes>
     </test>
-
-    <test name="newGroupTest">
-        <groups>
-            <run>
-                <include name="newGroup" />
-            </run>
-        </groups>
-
+    <test name="testParametrization2">
+        <parameter name="firstName" value="mariam"/>
+        <parameter name="lastName" value="dgebuadze"/>
+        <parameter name="gender" value="label[for='gender-radio-2']"/>
+        <parameter name="mobileNumber" value="5981063522"/>
         <classes>
-            <class name="CheckboxTests">
-                <methods>
-                    <include name="testUncheckCheckbox" /> <!-- Add the test method to include retry logic -->
-                </methods>
-            </class>
-            <class name="RadioButtonTests">
-                <methods>
-                    <include name="testSelectYesOption" /> <!-- Add the test method to include retry logic -->
-                </methods>
-            </class>
+            <class name="Parametrization"/>
         </classes>
     </test>
+    <test name="testParametrization3">
+        <parameter name="firstName" value="maka"/>
+        <parameter name="lastName" value="carcidze"/>
+        <parameter name="gender" value="label[for='gender-radio-3']"/>
+        <parameter name="mobileNumber" value="5714053693"/>
+        <classes>
+            <class name="Parametrization"/>
+        </classes>
+    </test>
+<!--    <test name="groupingtest">-->
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name=".*End" />-->
+<!--            </run>-->
+<!--        </groups>-->
+
+<!--        <classes>-->
+<!--            <class name="CheckboxTests">-->
+<!--                <methods>-->
+<!--                    <include name="testUncheckCheckbox" /> &lt;!&ndash; Add the test method to include retry logic &ndash;&gt;-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="RadioButtonTests">-->
+<!--                <methods>-->
+<!--                    <include name="testSelectYesOption" /> &lt;!&ndash; Add the test method to include retry logic &ndash;&gt;-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    <test name="newGroupTest">-->
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="newGroup" />-->
+<!--            </run>-->
+<!--        </groups>-->
+
+<!--        <classes>-->
+<!--            <class name="CheckboxTests">-->
+<!--                <methods>-->
+<!--                    <include name="testUncheckCheckbox" /> &lt;!&ndash; Add the test method to include retry logic &ndash;&gt;-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="RadioButtonTests">-->
+<!--                <methods>-->
+<!--                    <include name="testSelectYesOption" /> &lt;!&ndash; Add the test method to include retry logic &ndash;&gt;-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>
